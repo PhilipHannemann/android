@@ -9,22 +9,25 @@ import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.ImageView;
 
 
 public class OnSwipeTouchListener implements OnTouchListener {
 
     private final GestureDetector gestureDetector;
-    private View view;
+    private View parent;
+    private ImageView imageView;
     private Context context;
 
-    public OnSwipeTouchListener (Context ctx){
+    public OnSwipeTouchListener (Context ctx, ImageView imageView, View parent){
         context = ctx;
+        this.imageView = imageView;
+        this.parent = parent;
         gestureDetector = new GestureDetector(ctx, new GestureListener());
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        view = v;
         return gestureDetector.onTouchEvent(event);
     }
 
@@ -72,9 +75,8 @@ public class OnSwipeTouchListener implements OnTouchListener {
     public void onSwipeRight() {
         Log.e("Swipe", "left");
         Drawable image = context.getResources().getDrawable(R.drawable.candle1);
-        view.setBackground(image);
+        imageView.setBackground(image);
 
-        View parent = (View) view.getParent();
         Integer color = ContextCompat.getColor(context, R.color.yellow);
         parent.setBackgroundColor(color);
 
@@ -83,9 +85,8 @@ public class OnSwipeTouchListener implements OnTouchListener {
     public void onSwipeLeft() {
         Log.e("Swipe", "right");
         Drawable image = context.getResources().getDrawable(R.drawable.candle0);
-        view.setBackground(image);
+        imageView.setBackground(image);
 
-        View parent = (View) view.getParent();
         Integer color = ContextCompat.getColor(context, R.color.grey);
         parent.setBackgroundColor(color);
 
@@ -96,4 +97,6 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
     public void onSwipeBottom() {
     }
+
+
 }
