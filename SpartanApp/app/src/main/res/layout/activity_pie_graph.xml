@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="matrix"
+            android:src="@drawable/login_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/sjsu_logo"
+                    android:onClick="goHome"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+
+
+            <customfonts.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/spartanBlue"
+                android:text="December"
+                android:textSize="32dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="16dp"/>
+
+
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+                android:layout_marginTop="22dp"
+           >
+
+
+            <!-- Graph 1-->
+
+            <FrameLayout
+                android:layout_width="200px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                >
+
+                <customfonts.MyTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:textColor="@color/spartanBlue"
+                    android:text="28 %"
+                    android:padding="4dp"
+                    />
+
+                <!-- Here is fit chart ... You can set width by  app:strokeSize-->
+                <com.txusballesteros.widgets.FitChart
+
+
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    app:animationMode="overdraw"
+                    android:id="@+id/small1"
+                    android:layout_gravity="center"
+                    app:strokeSize="4dp"
+                    app:backStrokeColor="#630000"
+
+
+                    />
+            </FrameLayout>
+
+
+
+
+            <!-- Graph 2-->
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                >
+
+                <customfonts.MyTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="28dp"
+                    android:textColor="@color/spartanBlue"
+                    android:text="54 %"
+                    android:padding="4dp"
+                    />
+
+                <!-- Here is fit chart ... You can set width by  app:strokeSize-->
+                <com.txusballesteros.widgets.FitChart
+
+
+                    android:layout_width="300px"
+                    android:layout_height="300px"
+                    app:animationMode="overdraw"
+
+                    android:id="@+id/big"
+                    android:layout_gravity="center"
+                    app:strokeSize="4dp"
+                    app:backStrokeColor="#630000"
+
+
+                    />
+            </FrameLayout>
+
+
+
+
+
+            <!-- Graph 3-->
+
+            <FrameLayout
+                android:layout_width="200px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                >
+
+                <customfonts.MyTextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:textColor="@color/spartanBlue"
+                    android:text="18 %"
+                    android:padding="4dp"
+                    />
+
+                <!-- Here is fit chart ... You can set width by  app:strokeSize-->
+                <com.txusballesteros.widgets.FitChart
+
+
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    app:animationMode="overdraw"
+
+                    android:id="@+id/small2"
+                    android:layout_gravity="center"
+                    app:strokeSize="4dp"
+                    app:backStrokeColor="#630000"
+
+
+                    />
+            </FrameLayout>
+        </LinearLayout>
+
+
+
+
+            <customfonts.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/spartanBlue"
+                android:text="Good job, You have completed 6% more tasks this month"
+                android:textSize="14dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="58dp"
+                android:layout_marginRight="58dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="375dp"
+            android:src="@drawable/filter"
+            android:layout_gravity="center_horizontal"
+
+
+            />
+
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="430dp"></ListView>
+
+
+    </FrameLayout>
+
+
+
+
+
+</LinearLayout>
